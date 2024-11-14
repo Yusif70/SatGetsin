@@ -31,15 +31,16 @@ namespace Advertisement.Service.Services.Concretes
                 var uploadParams = new ImageUploadParams
                 {
                     File = new FileDescription(file.FileName, stream),
+                    PublicId = Guid.NewGuid().ToString() + Path.GetFileNameWithoutExtension(file.FileName),
                     Transformation = new Transformation().Height(500).Width(500).Crop("fill").Gravity("face")
                 };
                 uploadResult = await _cloudinary.UploadAsync(uploadParams);
             }
             return uploadResult;
         }
-        public async Task<DeletionResult> DeletePhotoAsync(Guid id)
+        public async Task<DeletionResult> DeletePhotoAsync(string id)
         {
-            var deleteParams = new DeletionParams(id.ToString());
+            var deleteParams = new DeletionParams(id);
             var result = await _cloudinary.DestroyAsync(deleteParams);
             return result;
         }

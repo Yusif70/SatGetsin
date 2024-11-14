@@ -11,7 +11,10 @@ namespace Advertisement.Service.Services.Abstractions
         Task<ApiResponse> GetLatest();
         Task<ApiResponse> GetById(Guid id);
         Task<ApiResponse> Create(AdPostDto dto);
-        //Task<ApiResponse> Update(Guid id, AdPutDto dto);
+        Task<ApiResponse> Update(Guid id, AdPutDto dto);
         Task<ApiResponse> Delete(Guid id);
+        Task<ApiResponse> Promote(PromoteDto dto);
+        Task<ApiResponse> AddToFavorites(FavoriteDto dto);
+        Task<ApiResponse> RemoveFromFavorites(Guid id);
     }
 }

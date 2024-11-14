@@ -8,7 +8,7 @@ namespace Advertisement.Service.Services.Abstractions
         Task<ApiResponse> GetAll();
         Task<ApiResponse> GetById(Guid id);
         Task<ApiResponse> Create(CityPostDto dto);
-        Task<ApiResponse> Update(Guid id, CityPutDto dto);
+        //Task<ApiResponse> Update(Guid id, CityPutDto dto);
         Task<ApiResponse> Delete(Guid id);
     }
 }

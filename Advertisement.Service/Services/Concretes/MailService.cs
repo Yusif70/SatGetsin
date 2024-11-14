@@ -14,7 +14,7 @@ namespace Advertisement.Service.Services.Concretes
             _config = config;
         }
 
-        public void SendMail(string to, string subject, string body)
+        public async void SendMail(string to, string subject, string body)
         {
             string from = _config["Mail:From"];
             MailMessage mail = new()

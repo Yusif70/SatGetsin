@@ -6,7 +6,7 @@ namespace Advertisement.Core.Entities
     public class Category : BaseEntity
     {
         public string Name { get; set; }
-        public string? Image { get; set; }
+        //public string? Image { get; set; }
         public string? ImageUrl { get; set; }
         [JsonIgnore]
         public Guid? ParentCategoryId { get; set; }

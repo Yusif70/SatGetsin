@@ -6,6 +6,6 @@ namespace Advertisement.Service.Services.Abstractions
     public interface IPhotoService
     {
         Task<ImageUploadResult> AddPhotoAsync(IFormFile file);
-        Task<DeletionResult> DeletePhotoAsync(Guid id);
+        Task<DeletionResult> DeletePhotoAsync(string id);
     }
 }

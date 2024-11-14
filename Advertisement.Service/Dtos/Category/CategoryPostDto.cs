@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace Advertisement.Service.Dtos.Category
+namespace Advertisement.Service.Dtos
 {
     public class CategoryPostDto
     {

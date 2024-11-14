@@ -18,17 +18,17 @@ namespace Advertisement.Service.Validations.Ad
             RuleFor(ap => ap.PhoneNumber)
                 .NotEmpty()
                 .NotNull()
-                .Matches("^(?:0|994)(?:12|51|50|55|70|77)[\\\\s.-]?[2-9][0-9]{2}[\\\\s.-]?[0-9]{2}[\\\\s.-]?[0-9]{2}$\r\n").WithMessage("Phone number not valid");
+                /*.Matches("^(?:0|994)(?:12|51|50|55|70|77)[\\\\s.-]?[2-9][0-9]{2}[\\\\s.-]?[0-9]{2}[\\\\s.-]?[0-9]{2}$\r\n").WithMessage("Phone number not valid")*/;
             RuleFor(ap => ap.Whatsapp)
                 .NotEmpty()
                 .NotNull()
-                .Matches("(?:0|994)(?:12|51|50|55|70|77)[^\\w]{0,2}[2-9][0-9]{2}[^\\w]{0,2}[0-9]{2}[^\\w]{0,2}[0-9]{2}").WithMessage("Phone number not valid");
+                /*.Matches("(?:0|994)(?:12|51|50|55|70|77)[^\\w]{0,2}[2-9][0-9]{2}[^\\w]{0,2}[0-9]{2}[^\\w]{0,2}[0-9]{2}").WithMessage("Phone number not valid")*/;
             RuleFor(ap => ap.Name)
                 .NotEmpty()
                 .NotNull();
             RuleFor(ap => ap.State)
                 .NotNull();
-            RuleFor(ap => ap.Cost)
+            RuleFor(ap => ap.Price)
                 .NotEmpty()
                 .NotNull();
             RuleFor(ap => ap.Description)

@@ -1,5 +1,5 @@
 ﻿using Advertisement.Core.Entities;
-using Advertisement.Service.Dtos.Category;
+using Advertisement.Service.Dtos;
 using AutoMapper;
 
 namespace Advertisement.Service.Mappers

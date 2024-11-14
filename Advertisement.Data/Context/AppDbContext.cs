@@ -10,6 +10,8 @@ namespace Advertisement.Data.Context
         public DbSet<Category> Categories { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Image> Images { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<Favorites> Favorites { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +26,15 @@ namespace Advertisement.Data.Context
                 .WithMany(c => c.Ads)
                 .HasForeignKey(a => a.CityId)
                 .OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<Ad>()
+                .HasOne(a => a.User)
+                .WithMany(u => u.Ads)
+                .HasForeignKey(a => a.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<AppUser>()
+                .HasIndex(u => u.PhoneNumber)
+                .IsUnique();
         }
     }
 }

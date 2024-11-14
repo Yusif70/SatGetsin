@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using Microsoft.AspNetCore.Http;
 
-namespace Advertisement.Service.Dtos.Category
+namespace Advertisement.Service.Dtos
 {
     public class CategoryPutDto
     {

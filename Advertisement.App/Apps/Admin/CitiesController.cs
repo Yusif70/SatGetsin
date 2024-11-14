@@ -8,7 +8,7 @@ namespace Advertisement.App.Apps.Admin
 {
     [Route("api/admin/[controller]")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, SuperAdmin")]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, SuperAdmin")]
     public class CitiesController : ControllerBase
     {
         private readonly ICityService _cityService;
@@ -23,12 +23,12 @@ namespace Advertisement.App.Apps.Admin
             var res = await _cityService.Create(dto);
             return StatusCode(res.StatusCode, res.Message);
         }
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromForm] CityPutDto dto)
-        {
-            var res = await _cityService.Update(id, dto);
-            return StatusCode(res.StatusCode);
-        }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> Update(Guid id, [FromForm] CityPutDto dto)
+        //{
+        //    var res = await _cityService.Update(id, dto);
+        //    return StatusCode(res.StatusCode);
+        //}
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {

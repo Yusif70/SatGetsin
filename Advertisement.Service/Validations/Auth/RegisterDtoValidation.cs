@@ -7,6 +7,9 @@ namespace Advertisement.Service.Validations.Auth
     {
         public RegisterDtoValidation()
         {
+            RuleFor(x => x.UserName)
+                .NotEmpty()
+                .NotNull();
             RuleFor(r => r.FullName)
                 .NotEmpty()
                 .NotNull()
@@ -21,11 +24,6 @@ namespace Advertisement.Service.Validations.Auth
             RuleFor(r => r.PhoneNumber)
                 .NotEmpty()
                 .NotNull();
-            RuleFor(r => r.Code)
-                .NotEmpty()
-                .NotNull();
-            RuleFor(r => r.AgreedToTerms)
-                .Equal(true);
         }
     }
 }

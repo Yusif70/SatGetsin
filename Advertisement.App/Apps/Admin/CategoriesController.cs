@@ -1,4 +1,4 @@
-﻿using Advertisement.Service.Dtos.Category;
+﻿using Advertisement.Service.Dtos;
 using Advertisement.Service.Services.Abstractions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -8,7 +8,7 @@ namespace Advertisement.App.Apps.Admin
 {
     [Route("api/admin/[controller]")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, SuperAdmin")]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, SuperAdmin")]
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
@@ -24,12 +24,12 @@ namespace Advertisement.App.Apps.Admin
             var res = await _categoryService.Create(dto);
             return StatusCode(res.StatusCode, res.Message);
         }
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, [FromForm] CategoryPutDto dto)
-        {
-            var res = await _categoryService.Update(id, dto);
-            return StatusCode(res.StatusCode);
-        }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> Update(Guid id, [FromForm] CategoryPutDto dto)
+        //{
+        //    var res = await _categoryService.Update(id, dto);
+        //    return StatusCode(res.StatusCode);
+        //}
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {

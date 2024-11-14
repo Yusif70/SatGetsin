@@ -1,4 +1,4 @@
-﻿using Advertisement.Service.Dtos.Category;
+﻿using Advertisement.Service.Dtos;
 using Advertisement.Service.Extensions;
 using FluentValidation;
 

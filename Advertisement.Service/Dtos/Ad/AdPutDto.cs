@@ -11,10 +11,9 @@ namespace Advertisement.Service.Dtos.Ad
         public string Whatsapp { get; set; }
         public string Name { get; set; }
         public Guid CategoryId { get; set; }
-        public Guid SubCategoryId { get; set; }
         public Guid CityId { get; set; }
         public ProductState State { get; set; }
-        public double Cost { get; set; }
+        public double Price { get; set; }
         public string Description { get; set; }
         public string VideoLink { get; set; }
         public List<IFormFile> Files { get; set; }

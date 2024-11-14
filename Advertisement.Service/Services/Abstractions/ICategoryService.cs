@@ -1,5 +1,5 @@
 ﻿using Advertisement.Service.ApiResponses;
-using Advertisement.Service.Dtos.Category;
+using Advertisement.Service.Dtos;
 
 namespace Advertisement.Service.Services.Abstractions
 {
