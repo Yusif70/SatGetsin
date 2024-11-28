@@ -1,0 +1,13 @@
+/.vs/
+/.idea/
+Advertisement.App/bin/
+Advertisement.App/obj/
+Advertisement.App/appsettings.json
+Advertisement.App/appsettings.Deployment.json
+Advertisement.App/appsettings.Development.json
+Advertisement.Core/bin
+Advertisement.Core/obj
+Advertisement.Data/bin
+Advertisement.Data/obj
+Advertisement.Service/bin
+Advertisement.Service/obj

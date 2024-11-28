@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="AutoMapper" Version="13.0.1" />
+	  <PackageReference Include="CloudinaryDotNet" Version="1.26.2" />
+	  <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+	  <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.1.2" />
+	  <PackageReference Include="Stripe.net" Version="47.0.0" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.2" />
+	  <PackageReference Include="Vonage" Version="7.10.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Advertisement.Core\Advertisement.Core.csproj" />
+	  <ProjectReference Include="..\Advertisement.Data\Advertisement.Data.csproj" />
+	</ItemGroup>
+</Project>
