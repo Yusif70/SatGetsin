@@ -1,0 +1,13 @@
+/.vs/
+/.idea/
+SatGetsin2.App/bin/
+SatGetsin2.App/obj/
+SatGetsin2.App/appsettings.json
+SatGetsin2.App/appsettings.Deployment.json
+SatGetsin2.App/appsettings.Development.json
+SatGetsin2.Core/bin
+SatGetsin2.Core/obj
+SatGetsin2.Data/bin
+SatGetsin2.Data/obj
+SatGetsin2.Service/bin
+SatGetsin2.Service/obj
