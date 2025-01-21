@@ -1,0 +1,7 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "./SatGetsin2.App/Dockerfile"
+
+[deploy]
+startCommand = "dotnet SatGetsin2.App.dll"
+restartPolicyType = "never"

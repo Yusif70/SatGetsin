@@ -279,6 +279,9 @@ namespace SatGetsin2.Data.Migrations
                     b.Property<int>("State")
                         .HasColumnType("int");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -425,35 +428,6 @@ namespace SatGetsin2.Data.Migrations
                     b.ToTable("Images");
                 });
 
-            modelBuilder.Entity("SatGetsin2.Core.Entities.Notification", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AdId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("LastUpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AdId");
-
-                    b.ToTable("Notifications");
-                });
-
             modelBuilder.Entity("SatGetsin2.Core.Entities.AppUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
@@ -466,6 +440,10 @@ namespace SatGetsin2.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Pfp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StripeCustomerId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasIndex("PhoneNumber")
@@ -585,17 +563,6 @@ namespace SatGetsin2.Data.Migrations
                 {
                     b.HasOne("SatGetsin2.Core.Entities.Ad", "Ad")
                         .WithMany("Images")
-                        .HasForeignKey("AdId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ad");
-                });
-
-            modelBuilder.Entity("SatGetsin2.Core.Entities.Notification", b =>
-                {
-                    b.HasOne("SatGetsin2.Core.Entities.Ad", "Ad")
-                        .WithMany()
                         .HasForeignKey("AdId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

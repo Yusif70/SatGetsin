@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SatGetsin2.App", "SatGetsin2.App\SatGetsin2.App.csproj", "{CA143786-001E-4A05-AE1C-1D3DDE75038A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SatGetsin2.App", "SatGetsin2.App\SatGetsin2.App.csproj", "{CA143786-001E-4A05-AE1C-1D3DDE75038A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SatGetsin2.Data", "SatGetsin2.Data\SatGetsin2.Data.csproj", "{BACA1494-E5A8-4277-A171-B50390EB20EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SatGetsin2.Data", "SatGetsin2.Data\SatGetsin2.Data.csproj", "{BACA1494-E5A8-4277-A171-B50390EB20EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SatGetsin2.Service", "SatGetsin2.Service\SatGetsin2.Service.csproj", "{D3446F75-247A-44BE-AF28-802B9E639767}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SatGetsin2.Service", "SatGetsin2.Service\SatGetsin2.Service.csproj", "{D3446F75-247A-44BE-AF28-802B9E639767}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SatGetsin2.Core", "SatGetsin2.Core\SatGetsin2.Core.csproj", "{311D968F-1E13-4A1F-B60D-FCAA0AEAEFD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SatGetsin2.Core", "SatGetsin2.Core\SatGetsin2.Core.csproj", "{311D968F-1E13-4A1F-B60D-FCAA0AEAEFD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{223B5893-9E3F-434F-AEBD-BD93A2CAA5F2}"
+	ProjectSection(SolutionItems) = preProject
+		railway.toml = railway.toml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

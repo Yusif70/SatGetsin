@@ -32,6 +32,7 @@ namespace SatGetsin2.Data.Migrations
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Pfp = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Balance = table.Column<double>(type: "float", nullable: true),
+                    StripeCustomerId = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -214,6 +215,7 @@ namespace SatGetsin2.Data.Migrations
                     VideoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Level = table.Column<int>(type: "int", nullable: false),
                     ExpireDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     LastUpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
@@ -284,28 +286,6 @@ namespace SatGetsin2.Data.Migrations
                     table.PrimaryKey("PK_Images", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Images_Ads_AdId",
-                        column: x => x.AdId,
-                        principalTable: "Ads",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Notifications",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AdId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Message = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    LastUpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Notifications", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Notifications_Ads_AdId",
                         column: x => x.AdId,
                         principalTable: "Ads",
                         principalColumn: "Id",
@@ -392,11 +372,6 @@ namespace SatGetsin2.Data.Migrations
                 name: "IX_Images_AdId",
                 table: "Images",
                 column: "AdId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Notifications_AdId",
-                table: "Notifications",
-                column: "AdId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -421,9 +396,6 @@ namespace SatGetsin2.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Images");
-
-            migrationBuilder.DropTable(
-                name: "Notifications");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
